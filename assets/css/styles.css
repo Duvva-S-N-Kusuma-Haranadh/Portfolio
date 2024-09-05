@@ -260,7 +260,9 @@ img {
   width: 200px;
   border-radius: 0.5rem;
 }
-
+.about__text{
+  line-height: 0.75rem;
+}
 .education__container {
   row-gap: 2rem;
   margin-bottom: var(--mb-4);
