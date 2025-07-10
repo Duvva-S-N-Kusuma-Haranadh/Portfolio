@@ -370,35 +370,6 @@ img {
 }
 
 /* ==== CERTIFICATIONS ==== */
-.certifications__contaniner {
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  gap: 30px;
-  justify-items: center;
-  padding: 20px;
-  max-width: 1200px;
-  margin: auto;
-}
-
-.certifications__contaniner a {
-  text-align: center;
-  text-decoration: none;
-  color: inherit;
-}
-
-.certificate__image {
-  width: 100%;
-  max-width: 500px;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-  border: 2px solid #ccc;
-  border-radius: 8px;
-}
-
-.certificate__name {
-  font-size: var(--normal-font-size);
-  font-weight: var(--font-semi);
-}
 
 
 /* ===== CONTACT =====*/
