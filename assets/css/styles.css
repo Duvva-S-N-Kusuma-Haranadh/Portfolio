@@ -371,10 +371,12 @@ img {
 
 /* ==== CERTIFICATIONS ==== */
 .certifications__contaniner {
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   gap: 30px;
   justify-items: center;
   padding: 20px;
+  max-width: 1200px;
+  margin: auto;
 }
 
 .certifications__contaniner a {
