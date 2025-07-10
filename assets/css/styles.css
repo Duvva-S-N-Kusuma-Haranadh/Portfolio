@@ -371,7 +371,7 @@ img {
 
 /* ==== CERTIFICATIONS ==== */
 .certifications__contaniner {
-  row-gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 }
 
 .certifications__contaniner a {
@@ -382,7 +382,7 @@ img {
 
 .certificate__image {
   width: 100%;
-  max-width: 300px;
+  max-width: 500px;
   height: auto;
   display: block;
   margin: 0 auto;
@@ -390,10 +390,9 @@ img {
   border-radius: 8px;
 }
 
-.certificate__title {
-  margin-top: 10px;
-  font-size: 1rem;
-  font-weight: bold;
+.certificate__name {
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-semi);
 }
 
 
