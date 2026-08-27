@@ -44,34 +44,30 @@ window.addEventListener("scroll", () => {
 /*=============== EMAIL JS ===============*/
 const contactForm = document.getElementById("contact-form"),
   contactMessage = document.getElementById("contact-message");
-const sendEmail = (e) => {
-  e.preventDefault();
+if (contactForm && contactMessage && typeof emailjs !== "undefined") {
+  emailjs.init({ publicKey: "ZpMGX8bDdcjqkYleh" });
 
-  emailjs
-    .sendForm(
-      "service_x58r6ae",
-      "template_h2gcpca",
-      "#contact-form",
-      "ZpMGX8bDdcjqkYleh"
-    )
-    .then(
-      () => {
-        //Show sent message
-        contactMessage.textContent = "Message sent successfully ✅";
+  const sendEmail = (e) => {
+    e.preventDefault();
+    contactMessage.textContent = "Sending...";
+
+    emailjs
+      .sendForm("service_x58r6ae", "template_h2gcpca", contactForm)
+      .then(() => {
+        contactMessage.textContent = "Message sent successfully";
+        contactForm.reset();
 
         setTimeout(() => {
           contactMessage.textContent = "";
         }, 5000);
+      })
+      .catch(() => {
+        contactMessage.textContent = "Message not sent (service error)";
+      });
+  };
 
-        contactForm.reset();
-      },
-      () => {
-        contactMessage.textContent = "Message not sent (service error) ❌";
-      }
-    );
-};
-
-contactForm.addEventListener("submit", sendEmail);
+  contactForm.addEventListener("submit", sendEmail);
+}
 
 /*===== SCROLL REVEAL ANIMATION =====*/
 const sr = ScrollReveal({
